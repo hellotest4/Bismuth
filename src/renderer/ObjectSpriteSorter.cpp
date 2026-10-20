@@ -52,7 +52,7 @@ UPtr<SortedObjectBatch> ObjectSpriteSorter::generateSortedBatch() {
     std::vector<u32> spriteRemap;
     spriteRemap.reserve(spriteEntries.size());
 
-    u32 approxWorkGroupCount = std::min<u32>(spriteEntries.size() / 2 + 1, MAX_WORK_GROUP_COUNT);
+    u32 approxWorkGroupCount = std::min<u32>(spriteEntries.size() / 16 + 1, MAX_WORK_GROUP_COUNT);
     u32 approxSpritesPerWorkGroup = spriteEntries.size() / approxWorkGroupCount;
 
     std::vector<WorkGroup> workGroups;
